@@ -1,0 +1,10 @@
+FROM node:14
+WORKDIR /usr/src/app
+RUN npm install -g supervisor 
+
+COPY package*.json ./
+
+RUN npm install
+COPY . .
+EXPOSE 8081
+CMD [ "npm", "run", "dev" ]

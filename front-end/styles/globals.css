@@ -1,0 +1,174 @@
+@font-face {
+  font-family: 'Suisse-Intl-Regular';
+  src: local('Suisse-Intl-Regular'),
+    url('../public/fonts/Suisse-Intl/SuisseIntl-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Suisse Intl Bold';
+  src: local('Suisse Intl Bold'),
+    url('../public/fonts/Suisse-Intl/SuisseIntl-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Suisse Intl Semi-Bold';
+  src: local('Suisse Intl Semi-Bold'),
+    url('../public/fonts/Suisse-Intl/SuisseIntl-SemiBold.otf')
+      format('opentype');
+}
+
+@font-face {
+  font-family: 'Druk Wide Bold';
+  src: local('Druk Wide Bold'),
+    url('../public/fonts/Druk\ Wide\ Bold/Druk Wide Bold.otf')
+      format('opentype');
+}
+p,
+span,
+small,
+strong,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+li,
+input {
+  font-family: 'Suisse-Intl-Regular';
+}
+
+ul li p {
+  display: inline;
+  font-family: 'Suisse-Intl-Regular';
+}
+ul li {
+  list-style-position: outside;
+}
+
+div.MuiDialog-paperScrollPaper {
+  position: absolute;
+  bottom: 0px;
+  margin: 0;
+  width: 100%;
+  /* border-top-left-radius: 20px;
+  border-top-right-radius: 20px; */
+}
+.MuiBadge-root .MuiBadge-anchorOriginBottomRightRectangle {
+  background: #000;
+  color: #fff;
+  bottom: 10px;
+  right: 10px;
+}
+
+div.bookmarkerSelect {
+  display: flex;
+  height: 40px;
+}
+.carousel {
+  box-shadow: none !important;
+}
+
+.itemgrid {
+  /* display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-auto-rows: 125px; */
+}
+.itemgrid.noauthor {
+  /* grid-auto-rows: 100px; */
+}
+.itemgriditem {
+  height: 200px;
+}
+/* .itemgridcard {
+  grid-row-end: span 2;
+}
+.itemgridboard {
+  grid-row-end: span 3;
+} */
+/* .itemgrid {
+  margin-top: 20px;
+} */
+.cardPreview,
+.boardPreview {
+  cursor: pointer;
+}
+.cardPreview {
+  grid-row-end: span 2;
+}
+.cardPreview .imageBackground {
+  height: 200px;
+  background-size: cover;
+  border-radius: 20px;
+  position: relative;
+}
+.cardPreview .videoBackground {
+  border-radius: 20px;
+  height: 200px;
+  position: relative;
+}
+.cardPreview .blankBackground {
+  border-radius: 20px;
+  background: #333;
+  height: 200px;
+  position: relative;
+}
+.cardPreview .videoBackground video {
+  object-fit: cover;
+  border-radius: 20px;
+}
+.cardPreview .name {
+  float: left;
+  margin-top: 10px;
+}
+
+.cardPreview .MuiAvatar-circle,
+.boardPreview .MuiAvatar-circle {
+  float: left;
+  height: 30px;
+  width: 30px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+.boardPreview {
+  position: relative;
+}
+.boardPreview .title,
+.cardPreview .title {
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%);
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
+.boardPreview .author {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  height: 40px;
+}
+.boardPreview .author .name {
+  padding-top: 7px;
+  color: #fff;
+}
+.boardPreview .background {
+  border-radius: 20px;
+  background-color: #aaa;
+  height: 375px;
+  padding: 10px;
+}
+.hash {
+  /* font-weight: bold;
+  display: inline-block;
+  padding: 2px;
+  font-size: 14px; */
+}
+.boardOwner {
+  /* font-weight: bold; */
+}

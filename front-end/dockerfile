@@ -1,0 +1,13 @@
+FROM node:14
+WORKDIR /usr/src/app
+ARG api_base_url
+ENV API_BASE_URL=$api_base_url
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+RUN npx next build
+CMD [ "npx", "next", "start" ]

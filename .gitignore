@@ -1,0 +1,5 @@
+node_modules/
+api/.env
+front-end/next.config.js
+api/static/*
+api/config.js

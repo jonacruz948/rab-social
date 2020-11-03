@@ -1,0 +1,56 @@
+version: '2.4'
+services:
+    rabble-database:
+        image: 'mongo'
+        environment:
+            - MONGO_INITDB_DATABASE=rabbledb
+            - MONGO_INITDB_ROOT_USERNAME=user
+            - MONGO_INITDB_ROOT_PASSWORD=password
+        volumes:
+            - rabble-mongo-vol:/data/db
+        ports:
+            - 27017:27017
+    rabble-api:
+        build: ./api
+        ports:
+            - "8081:8081"
+        environment: 
+            - NODE_ENV=production
+        volumes:
+         - ./api:/usr/src/app
+#    rabble-frontend:
+#        build: ./front-end
+#        ports:
+#            - "3000:3000"
+#        volumes:
+#            - ./front-end/:/usr/src/app
+#        environment: 
+#            - BASE_URL=host.docker.internal
+#        command: npm run dev
+#        environment: 
+#            - BASE_URL=
+    prometheus:
+        build: ./ops/prometheus
+        volumes: 
+            - prometheus:/prometheus-data
+        ports:
+            - "9090:9090"
+    grafana:
+        image: grafana/grafana:latest
+        volumes: 
+            - grafana:/var/lib/grafana
+        ports:
+            - "9091:3000"
+    mongodb_exporter:
+        build: ./ops/mongo_exporter
+        environment: 
+            - MONGODB_URI=mongodb://user:password@host.docker.internal:27017
+        ports: 
+            - "9216:9216"
+volumes:
+    rabble-mongo-vol:
+        external: false
+    prometheus:
+        external: false
+    grafana:
+        external: false
